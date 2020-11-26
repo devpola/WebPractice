@@ -1,0 +1,9 @@
+h1 {
+    color: red !important;
+}
+.text {
+    color: blue;
+}
+#text {
+    color: green;
+}
