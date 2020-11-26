@@ -16,6 +16,7 @@
     height: 400px;
 }
 
+/* > is child selector */
 .box > div{
     border: 1px solid blue;
     width: 200px;
@@ -23,6 +24,7 @@
     padding: 50px;
 }
 
+/* space is descendent selector */
 .box > div div {
     width: 50px;
     height: 50px;
