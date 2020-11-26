@@ -1,0 +1,47 @@
+body{
+    color: #000;
+}
+
+.inline a{
+    color: #000;
+    text-decoration: none;
+    border: 1px solid red;
+    /* inline 요소는 크기값을 가질 수 없음. 컨텐츠의 크기가 요소의 크기가 됨. */
+    width: 300px;
+    height: 200px;
+    /* 상하 마진은 적용되지 않음. */
+    margin: 50px;
+    /* padding은 가능 */
+    padding: 10px;
+}
+
+div{
+    border: 1px solid red;
+    height: 100px;
+    /* inline 요소의 기본적인 속성이므로 줄 필요 없음 */
+    /* width: 100%; */
+    margin: 50px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+img{
+    /* inline block 요소는 inline 요소와 같이 한 줄에 배치되지만 */
+    /* 크기 조정 가능, 상하 마진 가능 */
+    border: 1px solid red;
+    margin: 50px;
+}
+
+.display a{
+    color: #000;
+    text-decoration: none;
+    border: 1px solid red;
+    /* display: block;  block요소로 변경할 경우 세로로 배치됨(한줄에 하나(width:100%))*/
+    /* inline-block요소로 변경 시, block요소처럼 크기 및 마진 조정 가능하지만 가로배치 가능해짐 */
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+    width: 200px;
+    border-radius: 5px;
+    padding: 5px;
+}
