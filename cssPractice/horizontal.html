@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="horizontal.css">
+</head>
+<!-- 가로 배치하는 방법 -->
+<body>
+    <!-- 1. float:left와 부모요소의 overflow 이용하기 -->
+    <section>
+        <article>article</article>
+        <article>article</article>
+        <article>article</article>
+    </section>
+
+    <!-- 2. display: inline-block 이용 -->
+    <div class="parent">
+        <div class="child">child</div>
+        <div class="child">child</div>
+        <div class="child">child</div>
+    </div>
+
+    <!-- 단 1px의 오차 없이 정확히 가로배치를 하는 경우는 1번이 적합
+    요소들이 가로로 배치가 되기만 하면 되는 경우는 2번이 적합 -->
+</body>
+</html>
