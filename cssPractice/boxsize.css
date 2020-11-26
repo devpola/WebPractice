@@ -1,0 +1,13 @@
+.box {
+    border: 1px solid red;
+    width: 600px;
+    height: 600px;
+}
+
+.box div {
+    border: 1px solid blue;
+    width: 200px;
+    height: 200px;
+    float: left;
+    box-sizing: border-box;
+}
