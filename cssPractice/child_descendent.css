@@ -21,7 +21,9 @@
     border: 1px solid blue;
     width: 200px;
     height: 200px;
-    padding: 50px;
+    padding: 40px;
+    /* padding을 주더라도 처음 지정한 width와 height 유지하도록 하는 attribute  */
+    box-sizing: border-box;
 }
 
 /* space is descendent selector */
