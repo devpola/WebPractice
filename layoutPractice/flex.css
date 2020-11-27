@@ -1,0 +1,50 @@
+.content {
+    margin: 10px;
+    display: inline-block;
+}
+
+.content2 {
+    display: inline-block;
+}
+
+.box-container {
+    border: 5px solid red;
+    width: 150px;
+    display: inline-flex;
+}
+
+.box-container2 {
+    border: 5px solid red;
+    width: 150px;
+    margin-top: 5px;
+    display: flex;
+}
+
+.box {
+    background-color: gold;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+
+.item-container1 {
+    border: 5px solid red;
+    width: 150px;
+    display: flex;
+    /* default */
+    flex-direction: row;
+}
+
+.item-container2 {
+    border: 5px solid red;
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    background-color: gold;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
