@@ -1,0 +1,220 @@
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+body {
+    margin: 0;
+    font-family: Open Sans, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #525f7f;
+    text-align: left;
+    background-color: #f8f9fe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h3{
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #32325d;
+    font-size: 1.0625rem;
+    orphans: 3;
+    widows: 3;
+    page-break-after: avoid;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 0.375rem;
+}
+
+.shadow{
+    box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15) !important;
+}
+
+.card-header {
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 0;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.border-0 {
+    border: 0 !important;
+}
+
+.mb-0{
+    margin-bottom: 0 !important;
+}
+
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+.table th,
+.table td {
+  padding: 1rem;
+  vertical-align: top;
+  border-top: 1px solid #e9ecef;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.table tbody+tbody {
+  border-top: 2px solid #e9ecef;
+}
+
+.table .table {
+  background-color: #f8f9fe;
+}
+
+.table-flush td,
+.table-flush th {
+  border-left: 0;
+  border-right: 0;
+}
+
+.table-flush tbody tr:first-child td,
+.table-flush tbody tr:first-child th {
+  border-top: 0;
+}
+
+.table-flush tbody tr:last-child td,
+.table-flush tbody tr:last-child th {
+  border-bottom: 0;
+}
+
+.table .thead-light th {
+    color: #8898aa;
+    background-color: #f6f9fc;
+    border-color: #e9ecef;
+}
+
+.card .table {
+  margin-bottom: 0;
+}
+
+.card .table td,
+.card .table th {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.media {
+    display: flex;
+    align-items: flex-start;
+}
+
+.media-body {
+    flex: 1;
+}
+
+/* 적용시, 동그라미들 생김 */
+.avatar {
+    color: #fff;
+    background-color: #adb5bd;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+}
+  
+.avatar img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.rounded-circle {
+    border-radius: 50% !important;
+}
+
+.mr-2{
+    margin-right: 0.5rem !important;
+}
+
+.mr-3{
+    margin-right: 1rem !important;
+}
+
+.mr-4{
+    margin-right: 1.5rem !important;
+}
+
+.text-sm {
+    font-size: 0.875rem !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-light {
+    color: #adb5bd !important;
+}
+  
+a.text-light:hover,
+a.text-light:focus {
+    color: #919ca6 !important;
+}

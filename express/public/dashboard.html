@@ -1,11 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>
+    UC Dashboard
+  </title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- CSS Files -->
+  <link href="dashboard.css" rel="stylesheet" />
 </head>
+
 <body>
-    <h1>dashboard</h1>
+    <!-- Table -->
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-header border-0">
+                    <h3 class="mb-0">Sensor table</h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                        <tr>
+                        <th scope="col">Sensor</th>
+                        <th scope="col">Network</th>
+                        <th scope="col">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <div class="media align-items-center">
+                                <a href="#" class="avatar rounded-circle mr-3">
+                                    <img alt="Image placeholder" src="temperature.PNG">
+                                </a>
+                                <div class="media-body">
+                                    <span class="mb-0 text-sm">
+                                        <div id="name1"></div>
+                                    </span>
+                                </div>
+                                </div>
+                            </th>
+                            <td>
+                                <div id="networkid"></div>
+                            </td>
+                            <td>
+                                <div id="1"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <div class="media align-items-center">
+                                <a href="#" class="avatar rounded-circle mr-3">
+                                    <img alt="Image placeholder" src="temperature.PNG">
+                                </a>
+                                <div class="media-body">
+                                    <span class="mb-0 text-sm">
+                                        <div id="name14"></div>
+                                    </span>
+                                </div>
+                                </div>
+                            </th>
+                            <td>
+                                <div id="networkid1"></div>
+                            </td>
+                            <td>
+                                <div id="14"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <div class="media align-items-center">
+                                <a href="#" class="avatar rounded-circle mr-3">
+                                    <img alt="Image placeholder" src="door.PNG">
+                                </a>
+                                <span class="mb-0 text-sm">
+                                    <div id="name19"></div>
+                                </span>
+                                </div>
+                            </th>
+                            <td>
+                                <div id="networkid2"></div>
+                            </td>
+                            <td>
+                                <div id="19"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    var authToken;  //jiykim에 대한 auth(authentication) token
+    var accountID;  //jiykim에 대한 accountID
+    var networkID;  //jiykim에 대한 networkID
+    var sensorID;   //jiykim의 모든 sensorID 리스트
+    var sensorStatus;   //jiykim의 모든 sensor의 status 리스트
+    $(function(){
+        $.ajax({
+            url: 'https://www.imonnit.com/json/GetAuthToken?username=jiykim&password=A!!03697jiykim',
+            data: { username: 'jiykim', password: 'A!!003697jiykim'},
+            dataType: 'jsonp',
+        }).done(function(results){
+            authToken = results.Result; //authToken 저장
+            //jiykim에 대한 accountID 저장
+            $.ajax({
+                url: 'https://www.imonnit.com/json/AccountGet/aml5a2ltOkEhITAwMzY5N2ppeWtpbQ==?',
+                dataType: 'jsonp',
+            }).done(function(results){
+                accountID = results.Result.AccountID;
+            });
+
+            //jiykim에 대한 networkID 저장
+            $.ajax({
+                url: 'https://www.imonnit.com/json/NetworkList/aml5a2ltOkEhITAwMzY5N2ppeWtpbQ==',
+                dataType: 'jsonp',
+            }).done(function(results){
+                networkID = results.Result[0].NetworkID;
+                document.getElementById("networkid").innerHTML = networkID;
+            });
+            
+            //jiykim의 모든 sensor에 대한 data(ID, status, name, currentreading) 저장
+            $.ajax({
+                url: 'https://www.imonnit.com/json/SensorList/aml5a2ltOkEhITAwMzY5N2ppeWtpbQ==?',
+                dataType: 'jsonp',
+            }).done(function(results){
+                for(var i = 0; results.Result[i].SensorID != ""; i++)
+                {
+                    sensorID.push(results.Result[i].SensorID);
+                    sensorStatus.push(results.Result[i].Status);
+                }
+            }); //ㅈㅓ장안됐는디.. 흥
+
+            //Current 센서 값 읽어옴
+            $.ajax({
+                url: 'https://www.imonnit.com/json/SensorGet/aml5a2ltOkEhITAwMzY5N2ppeWtpbQ==?sensorID=505035',
+                data: {sensorID: '505035'},
+                dataType: 'jsonp',
+            }).done(function(results){
+                document.getElementById("name1").innerHTML = results.Result.SensorName;
+                document.getElementById("1").innerHTML = results.Result.CurrentReading;
+            });
+        });       
+    });
+</script>
 </html>
