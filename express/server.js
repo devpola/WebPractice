@@ -7,8 +7,7 @@ const fs = require('fs');
 const database = {
     users: [
         {
-            name: 'jiykim',
-            password: 'A!!003697jiykim'
+            
         }
     ]
 };
